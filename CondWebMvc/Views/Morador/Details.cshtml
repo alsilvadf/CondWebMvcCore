@@ -1,0 +1,41 @@
+﻿@model CondWebMvc.Models.Morador
+
+@{
+    Layout = null;
+}
+
+    <div class="container-fluid">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhar Morador</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form asp-action="Edit">
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.NomeMorador):
+                        @Html.DisplayFor(model => model.NomeMorador)
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.TelefoneMorador):
+                        @Html.DisplayFor(model => model.TelefoneMorador)
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.EmailMorador):
+                        @Html.DisplayFor(model => model.EmailMorador)
+                    </div>
+                    @*<div class="form-group">
+                        @Html.DisplayNameFor(model => model.Unidade.Id):
+                        @Html.DisplayFor(model => model.Unidade.NomeComBloco)
+                    </div>*@
+                    <div class="form-group">
+                        @*<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success" data-toggle="modal" data-target="#modalEditar">Editar</a> |*@
+                        <a asp-action="Index" class="btn btn-info">Voltar</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>

@@ -1,0 +1,41 @@
+﻿@model CondWebMvc.Models.ViewModels.VisitaFormViewModels
+
+@{
+    Layout = null;
+}
+
+    <div class="container-fluid">
+        <div class="modal-header">
+            <h4 class="modal-title">Novo Visitante</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div class="form-group">
+                        <label asp-for="Visita.NomeVisitante" class="control-label"></label>
+                        <input asp-for="Visita.NomeVisitante" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Visita.Documento" class="control-label"></label>
+                        <input asp-for="Visita.Documento" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Visita.UnidadeId" class="control-label"></label>
+                        <select asp-for="Visita.UnidadeId" asp-items="@(new SelectList(Model.Unidades,"Id","NomeComBloco"))" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Visita.Obs" class="control-label"></label>
+                        <input asp-for="Visita.Obs" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Incluir" class="btn btn-success" />
+                        <a asp-action="Index" class="btn btn-info">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+

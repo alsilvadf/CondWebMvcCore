@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using CondWebMvc.Models;
+using CondWebMvc.Services;
 
 namespace CondWebMvc
 {
@@ -33,6 +36,13 @@ namespace CondWebMvc
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<CondWebMvcContext>(options =>
+                     options.UseMySql(Configuration.GetConnectionString("CondWebMvcContext"), builder => builder.MigrationsAssembly("CondWebMvc")));
+
+            services.AddScoped<UnidadeService>();
+            services.AddScoped<MoradorService>();
+            services.AddScoped<VisitaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

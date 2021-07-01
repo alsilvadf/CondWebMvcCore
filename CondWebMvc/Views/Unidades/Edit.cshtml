@@ -1,0 +1,43 @@
+﻿@model CondWebMvc.Models.Unidade
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="modal-header">
+        <h4 class="modal-title">Editar Unidade</h4>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="NumUnidade" class="control-label"></label>
+                    <input asp-for="NumUnidade" class="form-control" />
+                    <span asp-validation-for="NumUnidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlocoUnidade" class="control-label"></label>
+                    <input asp-for="BlocoUnidade" class="form-control" />
+                    <span asp-validation-for="BlocoUnidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                    <a asp-action="Index" class="btn btn-info">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

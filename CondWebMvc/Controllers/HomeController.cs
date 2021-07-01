@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CondWebMvc.Models;
+using CondWebMvc.Models.ViewModels;
 
 namespace CondWebMvc.Controllers
 {
@@ -13,6 +13,7 @@ namespace CondWebMvc.Controllers
         public IActionResult Index()
         {
             return View();
+            //COMENTARIO 
         }
 
         public IActionResult About()

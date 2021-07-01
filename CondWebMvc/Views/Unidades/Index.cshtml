@@ -1,0 +1,89 @@
+﻿@model IEnumerable<CondWebMvc.Models.Unidade>
+
+@{
+    ViewData["Title"] = "Listar Unidades/Apartamentos";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+
+<p>
+    <a asp-action="Create" class="btn btn-success" data-toggle="modal" data-target="#modalIncluir">Novo</a>
+</p>
+<table class="table table-striped">
+    <thead class="text-light bg-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumUnidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlocoUnidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumUnidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlocoUnidade)
+                </td>
+                <td style="text-align: right">
+                    <p>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning" data-toggle="modal" data-target="#modalEditar">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info" data-toggle="modal" data-target="#modalDetalhar">Detalhar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger text-right" data-toggle="modal" data-target="#modalExcluir">Excluir</a>
+</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--Inicio modal Create-->
+<div class="modal fade" id="modalIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!--Inicio Corpo do Modal-->
+            <!--Fim Corpo do Modal-->
+        </div>
+    </div>
+</div>
+<!--FIm modal Create-->
+<!--Inicio modal Editar-->
+<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!--Inicio Corpo do Modal-->
+            <!--Fim Corpo do Modal-->
+        </div>
+    </div>
+</div>
+<!--FIm modal Editar-->
+<!--Inicio modal Detalhar-->
+<div class="modal fade" id="modalDetalhar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!--Inicio Corpo do Modal-->
+            <!--Fim Corpo do Modal-->
+        </div>
+    </div>
+</div>
+<!--FIm modal Detalhar-->
+<!--Inicio modal Excluir-->
+<div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!--Inicio Corpo do Modal-->
+            <!--Fim Corpo do Modal-->
+        </div>
+    </div>
+</div>
+<!--FIm modal Excluir-->

@@ -1,0 +1,44 @@
+﻿@model CondWebMvc.Models.ControleVisitas
+
+@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="modal-header">
+        <h4 class="modal-title">Detalhar Visitante</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form asp-action="Edit">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.NomeVisitante):
+                    @Html.DisplayFor(model => model.NomeVisitante)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Documento):
+                    @Html.DisplayFor(model => model.Documento)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.UnidadeId):
+                    @Html.DisplayFor(model => model.UnidadeId)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Obs):
+                    @Html.DisplayFor(model => model.Obs)
+                </div>
+                @*<div class="form-group">
+            @Html.DisplayNameFor(model => model.Unidade.Id):
+            @Html.DisplayFor(model => model.Unidade.NomeComBloco)
+        </div>*@
+                <div class="form-group">
+                    @*<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success" data-toggle="modal" data-target="#modalEditar">Editar</a> |*@
+                    <a asp-action="Index" class="btn btn-info">Voltar</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>

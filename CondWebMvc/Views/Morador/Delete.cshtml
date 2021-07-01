@@ -1,0 +1,40 @@
+﻿@model CondWebMvc.Models.Morador
+
+@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="modal-header">
+        <h4 class="modal-title">Deseja Excluir este Morador?</h4>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Delete">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.NomeMorador):
+                    @Html.DisplayFor(model => model.NomeMorador)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.TelefoneMorador):
+                    @Html.DisplayFor(model => model.TelefoneMorador)
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.EmailMorador):
+                    @Html.DisplayFor(model => model.EmailMorador)
+                </div>
+                @*<div class="form-group">
+                    @Html.DisplayNameFor(model => model.UnidadeId):
+                    @Html.DisplayFor(model => model.UnidadeId)
+                </div>*@
+                <div class="form-group">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Excluir" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-info">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
